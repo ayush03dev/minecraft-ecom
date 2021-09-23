@@ -1,0 +1,10 @@
+.login {
+    background-color: white;
+    height: 100%;
+    padding: 10% 20%;
+    text-align: center !important;
+}
+
+.username-field {
+    width: 15rem;
+}

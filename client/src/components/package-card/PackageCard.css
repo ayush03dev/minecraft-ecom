@@ -1,0 +1,33 @@
+.package-card {
+    border-radius: 10px;
+    background-color: #ebebeb;
+}
+
+.package-card h5 {
+    font-size: 1rem;
+    text-align: center;
+}
+
+.shop-menu {
+    padding: 0px 2rem;    
+    background-color: #455a64;
+}
+
+.card-container .nav-link {
+    border: 1px solid gray;
+}
+
+.card-image {
+    height: 128px;
+    width: 128px;
+}
+
+.card-image:hover   {
+    opacity: 50%;
+    transition: 0.5s ease;
+}
+
+.price {
+    color: green;
+}
+

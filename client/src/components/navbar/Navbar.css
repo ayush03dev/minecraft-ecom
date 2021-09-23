@@ -1,0 +1,21 @@
+.navbar {
+    background-color: #262626;
+    padding: 0rem 0rem;
+}
+
+.logo {
+    width: 15rem;
+    height: 5rem;
+    /* height: 100%; */
+}
+
+.nav-link {
+    color: white !important;
+    padding: 1rem 1.5rem !important;
+    /* font-size: 1.1rem; */
+}
+
+.login-btn {
+    padding: 0rem 2rem;
+    margin-left: 1.5rem;
+}

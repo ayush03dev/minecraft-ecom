@@ -1,0 +1,38 @@
+body {
+  background-color: #D6D6D6;
+}
+
+.spinner {
+  position: absolute;
+  top: 50%;
+  bottom: 50%;
+  left: 50%;
+  right: 50%;
+  color: rebeccapurple !important;
+}
+
+.module h6 {
+  background-color: rgb(69,90,100);
+  border: solid 1px black;
+  color: white;
+  padding: 10px 15px;
+  font-weight: 500;
+}
+
+.body-container {
+  margin-top: 2rem;
+}
+
+.module {
+  background-color: #e2e2e2;
+  margin-bottom: 2rem;
+}
+
+.player-info {
+  overflow: hidden;
+  text-align: center;
+}
+
+.player-name {
+  margin-top: 0.5rem;
+}
