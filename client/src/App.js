@@ -13,6 +13,7 @@ import { connect } from 'react-redux';
 import Login from './components/login/Login';
 import { requestData, logout } from './actions/playerActions';
 import { useHistory } from 'react-router-dom';
+import RecentModule from './components/modules/recent/RecentModule';
 
 function App({ loading, player, requestData, logout }) {
 
@@ -74,11 +75,13 @@ function App({ loading, player, requestData, logout }) {
                 </div>
               </div>
             : <></>}
-              <div className="module">
+              {/* <div className="module">
               <h6>Donation Goal</h6>
               <p>No recent donations</p>
 
-              </div>
+              </div> */}
+
+              <RecentModule />
 
               <div className="module">
               <h6>Top Donors</h6>
@@ -93,7 +96,7 @@ function App({ loading, player, requestData, logout }) {
             </Col>
           </Row>
         </Container>
-        </>})
+        </>}
       </>
   );
 }

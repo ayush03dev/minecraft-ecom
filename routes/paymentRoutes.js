@@ -4,10 +4,42 @@ import { captureOrder, createOrder } from '../config/paypal.js';
 import { Package } from '../models/packageModel.js';
 import { Transaction } from '../models/transactionModel.js';
 import { Player } from '../models/playerModel.js';
-import { getPlayerByName, getPlayerById } from './minecraftRoutes.js';
-import axios from 'axios';
+import { getPlayerById } from './minecraftRoutes.js';
 
 const router = express.Router();
+
+router.get('/recent', async (req, res) => {
+    try {
+        var transactions = await Transaction.find().sort({date: -1}).limit(5).populate('package').lean();
+        
+        const arr = [];
+        const uuidMap = {};
+
+        const promises = [];
+
+        transactions.forEach( t => {
+            const uuid = t.uuid;
+            if (!uuidMap[uuid]) {
+                uuidMap[uuid] = "loading";
+                promises.push(getPlayerById(uuid));
+            }
+        });
+
+        await Promise.all(promises).then(data => data.forEach(player => {
+            uuidMap[player.id] = player;
+        }))
+
+        transactions.forEach(t => {
+            t.player = uuidMap[t.uuid];
+            arr.push(t);
+        })
+        
+        return res.json(arr);
+    } catch (error) {
+        console.error(error.message);
+        return res.status(500).json({message: 'Internal Server Error: ' + error.message}); 
+    }
+})
 
 router.post('/create', [[
     check('package_id', 'Package id must be valid!').not().isEmpty().isMongoId(),
