@@ -1,5 +1,7 @@
 body {
   background-color: #D6D6D6;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
 }
 
 .spinner {
@@ -11,22 +13,11 @@ body {
   color: rebeccapurple !important;
 }
 
-.module h6 {
-  background-color: rgb(69,90,100);
-  border: solid 1px black;
-  color: white;
-  padding: 10px 15px;
-  font-weight: 500;
-}
-
 .body-container {
   margin-top: 2rem;
 }
 
-.module {
-  background-color: #e2e2e2;
-  margin-bottom: 2rem;
-}
+
 
 .player-info {
   overflow: hidden;

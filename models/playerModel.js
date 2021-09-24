@@ -9,6 +9,10 @@ export const PlayerSchema = new mongoose.Schema({
     transactions: {
         type: [mongoose.Schema.Types.ObjectId],
         ref: 'Transaction'
+    },
+
+    totalSpent: {
+        type: Number
     }
 })
 

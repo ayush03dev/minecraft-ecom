@@ -14,7 +14,6 @@ function Login({ requestData, player }) {
         const { name } = player;
         if (name !== null && name !== undefined) {
             localStorage.setItem('concordia-player', name);
-            console.log('pushing...');
             history.push('/category/ranks');
         }
     }, [history, player])
@@ -25,7 +24,6 @@ function Login({ requestData, player }) {
 
     const onClick = async event => {
         event.preventDefault();
-        console.log(username);
         await requestData(username);
     }
 

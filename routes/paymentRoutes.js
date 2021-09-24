@@ -39,6 +39,34 @@ router.get('/recent', async (req, res) => {
         console.error(error.message);
         return res.status(500).json({message: 'Internal Server Error: ' + error.message}); 
     }
+});
+
+router.get('/top', async (req, res) => {
+    try {
+        var players = await Player.find().sort({totalSpent: -1}).limit(5).select('uuid totalSpent').lean();
+
+        const uuidMap = {};
+        const promises = [];
+        const arr = [];
+
+        players.forEach(p => {
+            promises.push(getPlayerById(p.uuid));
+        })
+        
+        await Promise.all(promises).then(data => data.forEach(playerData => {
+            uuidMap[playerData.id] = playerData;
+        }));
+
+        players.forEach(p => {
+            p.data = uuidMap[p.uuid];
+            arr.push(p);
+        })
+
+        return res.json(arr);
+    } catch (error) {
+        console.error(error.message);
+        return res.status(500).json({message: 'Internal Server Error: ' + error.message}); 
+    }
 })
 
 router.post('/create', [[
@@ -101,6 +129,12 @@ router.post('/execute', [[
         var playerDoc = await Player.findOne({uuid});
         if (!playerDoc) {
             playerDoc = new Player({uuid});
+        }
+
+        if (playerDoc.totalSpent) {
+            playerDoc.totalSpent += p.price;
+        } else {
+            playerDoc.totalSpent = p.price;
         }
 
         playerDoc.transactions.push(txn._id);

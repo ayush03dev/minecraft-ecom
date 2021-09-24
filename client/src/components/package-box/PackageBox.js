@@ -6,6 +6,7 @@ import { Redirect, useParams } from 'react-router';
 import axios from 'axios';
 import { connect } from 'react-redux';
 
+
 function PackageBox({ player, loading: gLoading }) {
   
     const params = useParams();
@@ -51,6 +52,7 @@ function PackageBox({ player, loading: gLoading }) {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="category-links">
+                    <Nav.Link className="selected" href="/shop/about">About</Nav.Link>
                     <Nav.Link href="/category/ranks">Ranks</Nav.Link>
                     <Nav.Link href="/category/cosmetics">Cosmetics</Nav.Link>
        </Nav>

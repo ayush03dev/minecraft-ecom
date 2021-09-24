@@ -10,3 +10,14 @@
 .paid-success {
   text-align: center;
 }
+
+.category-links .nav-link {
+  color: white !important;
+  padding: 1rem 1.5rem;
+  margin: 0 10px;
+}
+
+
+.nav-links {
+  color: white;
+}

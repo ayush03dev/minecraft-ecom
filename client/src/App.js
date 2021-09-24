@@ -14,6 +14,8 @@ import Login from './components/login/Login';
 import { requestData, logout } from './actions/playerActions';
 import { useHistory } from 'react-router-dom';
 import RecentModule from './components/modules/recent/RecentModule';
+import PlayerModule from './components/modules/player/PlayerModule';
+import TopModule from './components/modules/top/TopModule';
 
 function App({ loading, player, requestData, logout }) {
 
@@ -65,34 +67,10 @@ function App({ loading, player, requestData, logout }) {
             <Col md={3}>
 
             {player.name ? 
-
-              <div className="module">
-                <h6>Player Information</h6>
-                <div className="player-info">
-                  <img style={{width: '64px'}} src={player.avatar} />
-                  <p className="player-name">IGN: <b>{player.name}</b></p>
-                    <Button variant="danger" size="sm" onClick={onChangeAccount}>Change MC Account</Button>
-                </div>
-              </div>
-            : <></>}
-              {/* <div className="module">
-              <h6>Donation Goal</h6>
-              <p>No recent donations</p>
-
-              </div> */}
-
-              <RecentModule />
-
-              <div className="module">
-              <h6>Top Donors</h6>
-              <p>No recent donations</p>
-
-              </div>
-
-              <div className="module">
-              <h6>Recent Donations</h6>
-                <p>No recent donations</p>
-              </div>
+              <PlayerModule player={player} onChangeAccount={onChangeAccount}/>
+              : <></>}
+              <TopModule player={player} />
+              <RecentModule player={player} />
             </Col>
           </Row>
         </Container>

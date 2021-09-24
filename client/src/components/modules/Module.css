@@ -1,0 +1,32 @@
+.module {
+    background-color: #e2e2e2;
+    margin-bottom: 2rem;
+  }
+
+.module-title {
+    background-color:#455a64;
+    border: solid 1px black;
+    color: white;
+    padding: 10px 15px;
+    font-weight: 500;
+}
+
+.module-content {
+    padding: 0px 15px;
+    overflow: hidden;
+}
+
+.skin-avatar {
+    width: 32px;
+    height: 32px;
+}
+
+.recent-module .player-name, .top-module .player-name {
+    font-weight: 700;
+}
+
+
+.module-price {
+    color: #198754;
+    font-weight: 500;
+}
