@@ -14,7 +14,7 @@ function Login({ requestData, player }) {
         const { name } = player;
         if (name !== null && name !== undefined) {
             localStorage.setItem('concordia-player', name);
-            history.push('/category/ranks');
+            history.push('/store/category/ranks');
         }
     }, [history, player])
 

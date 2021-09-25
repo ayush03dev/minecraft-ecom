@@ -11,7 +11,7 @@ function PlayerModule({ player, onChangeAccount }) {
             <div className="player-info">
             <img style={{width: '64px'}} src={player.avatar} alt='player avatar' />
             <p className="player-name">IGN: <b>{player.name}</b></p>
-            <Button variant="danger" size="sm" href='/login' onClick={onChangeAccount}>Change MC Account</Button>
+            <Button variant="danger" size="sm" href='/store/login' onClick={onChangeAccount}>Change MC Account</Button>
             </div>
         </div>
       </div>

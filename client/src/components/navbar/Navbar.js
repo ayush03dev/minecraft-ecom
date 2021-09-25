@@ -1,10 +1,10 @@
 import React from 'react'
-import { Navbar as NavigationBar, Container, Nav, NavDropdown, Button } from 'react-bootstrap';
+import { Navbar as NavigationBar, Container, Nav } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 
 import './Navbar.css';
 
-function Navbar({categories}) {
+function Navbar() {
     return (
         <>
         <NavigationBar className="navbar" expand="lg">
@@ -19,7 +19,7 @@ function Navbar({categories}) {
                     <Nav.Link>Home</Nav.Link>
                 </LinkContainer>
 
-                <Nav.Link href="/category/ranks">Store</Nav.Link>
+                <Nav.Link href="/store/category/ranks">Store</Nav.Link>
                 <LinkContainer to='/vote'>
                     <Nav.Link >Vote</Nav.Link>
                 </LinkContainer>

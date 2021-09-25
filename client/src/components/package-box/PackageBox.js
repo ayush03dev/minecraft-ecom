@@ -35,7 +35,7 @@ function PackageBox({ player, loading: gLoading }) {
 
     if (loading || gLoading.loading) return <div>Loading...</div>;
     if (!player.success) {
-      return <Redirect to='/login'/>;
+      return <Redirect to='/store/login'/>;
     }
 
     if (paid) {
@@ -53,8 +53,8 @@ function PackageBox({ player, loading: gLoading }) {
         <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="category-links">
                     <Nav.Link className="selected" href="/shop/about">About</Nav.Link>
-                    <Nav.Link href="/category/ranks">Ranks</Nav.Link>
-                    <Nav.Link href="/category/cosmetics">Cosmetics</Nav.Link>
+                    <Nav.Link href="/store/category/ranks">Ranks</Nav.Link>
+                    <Nav.Link href="/store/category/cosmetics">Cosmetics</Nav.Link>
        </Nav>
        </Navbar.Collapse>
       </Navbar>
