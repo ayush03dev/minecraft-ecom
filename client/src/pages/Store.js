@@ -8,13 +8,13 @@ import TopModule from '../components/modules/top/TopModule';
 import RecentModule from '../components/modules/recent/RecentModule';
 import { connect } from 'react-redux';
 import { requestData, logout } from '../actions/playerActions';
+import { Grid } from '@mui/material';
 
 function Store( { player, logout, ...rest }) {
     const onChangeAccount = (event) => {
         event.preventDefault();
         localStorage.removeItem('concordia-player');
         logout();
-        // navigate.push('/login')
       }
       
       useEffect(() => {
@@ -27,9 +27,9 @@ function Store( { player, logout, ...rest }) {
 
 
     return (
-        <>
-            <Row>
-            <Col md={9}>
+        <div style={{padding: '0 16px', alignContent: 'center'}}>
+            <Grid container spacing={3}>
+            <Grid item md={9} xs={12}>
               <Switch>
               <Route path='/store/login' exact>
                   <Login />
@@ -38,18 +38,18 @@ function Store( { player, logout, ...rest }) {
                   <PackageBox />
                 </Route>
               </Switch>
-            </Col>
+            </Grid>
 
-            <Col md={3}>
+            <Grid item md={3} xs={12}>
 
             {player.name ? 
               <PlayerModule player={player} onChangeAccount={onChangeAccount}/>
               : <></>}
               <TopModule player={player} />
               <RecentModule player={player} />
-            </Col>
-          </Row>
-        </>
+            </Grid>
+          </Grid>
+        </div>
     )
 }
 

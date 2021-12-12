@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import PackageCard from '../package-card/PackageCard';
+import { Col, Navbar, Row, Nav } from 'react-bootstrap';
 import './PackageBox.css';
 import { Redirect, useParams } from 'react-router';
 import axios from 'axios';
 import { connect } from 'react-redux';
-import { Grid, Typography } from '@mui/material';
 
 
 function PackageBox({ player, loading: gLoading }) {
@@ -43,18 +43,26 @@ function PackageBox({ player, loading: gLoading }) {
       <img src='/check.png' alt="Success"/>
       <br/>
       <br />
-      <h2 style={{color: 'white'}}>Purchase Successful!</h2></div>
+      <h2>Purchase Successful!</h2></div>
     }
 
     return (
-      <div className="card-container">
-        <Typography color='white' variant='h5' sx={{background: '#1C2033'}}>Ranks</Typography>
-
-      <div style={{padding: '2rem 0rem'}}>
-      <Grid container spacing={4}>
+        <div className="card-container">
+        <Navbar style={{background: '#1C2033'}} className="navbar shop-menu" expand="lg">
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className="category-links">
+                    <Nav.Link className="selected" href="/shop/about">About</Nav.Link>
+                    <Nav.Link href="/store/category/ranks">Ranks</Nav.Link>
+                    <Nav.Link href="/store/category/cosmetics">Cosmetics</Nav.Link>
+       </Nav>
+       </Navbar.Collapse>
+      </Navbar>
+      <div style={{padding: '2rem 4rem'}}>
+      <Row>
         {packages.length === 0 ? <div>Not Found</div> : <></>} 
         {packages.map((p, id) => (
-          <Grid item key={id} lg={4} md={6} xs={12}>
+          <Col key={id} xl={4} lg={6} xs={12}>
           <PackageCard
            image="https://dunb17ur4ymx4.cloudfront.net/packages/images/e6d6709c969b73397cd84cf77c96fa3619284d85.png"
            title={p.name}
@@ -65,9 +73,9 @@ function PackageBox({ player, loading: gLoading }) {
            playerId={player.id}
            setPaid={setPaid}
            />
-           </Grid>))}
-        </Grid>
-        </div>
+           </Col>))}
+        </Row>
+      </div>
     </div>
     )
 }

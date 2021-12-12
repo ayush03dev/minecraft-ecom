@@ -1,11 +1,11 @@
 .module {
-    background-color: #e2e2e2;
+    background-color: #2E2E41;
     margin-bottom: 2rem;
-  }
+    color: white;
+}
 
 .module-title {
-    background-color:#455a64;
-    border: solid 1px black;
+    background-color:#1C2033;
     color: white;
     padding: 10px 15px;
     font-weight: 500;

@@ -1,7 +1,10 @@
 import paypal from '@paypal/checkout-server-sdk';
+import dotenv from 'dotenv';
+
+dotenv.config();
  
-let clientId = 'AUrgJYUp1-ESCbXlPWTHzViQIwYevJSGTR9ZlRx5Nbk3_9d6KBlRzFHJGzXJSJo0N6ELJoCgJe7fsi_L';
-let clientSecret = 'EEFgMQP3a5ox-nQ6knD80Q-q-jIFTyK8lccGF-Ik893qHrzEKVPrUCuzyTbk3ucLS6n-Oqg38pd0ciGO';
+let clientId = process.env.PAYPAL_CLIENT_ID;
+let clientSecret = process.env.PAYPAL_CLIENT_SECRET;
 
 let environment = new paypal.core.SandboxEnvironment(clientId, clientSecret);
 let client = new paypal.core.PayPalHttpClient(environment);

@@ -1,7 +1,11 @@
 body {
-  background-color: #D6D6D6;
+  background-color: #2A2A3B;
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
+}
+
+.app {
+  height: 100vh;
 }
 
 .spinner {
@@ -16,8 +20,6 @@ body {
 .body-container {
   margin-top: 2rem;
 }
-
-
 
 .player-info {
   overflow: hidden;

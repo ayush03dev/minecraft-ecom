@@ -3,6 +3,7 @@ import routes from './routes/index.js';
 import connectDB from './config/db.js';
 import expressWs from 'express-ws';
 import path from 'path';
+import dotenv from 'dotenv';
 
 const app = express();
 const wss = expressWs(app);
@@ -10,6 +11,8 @@ const __dirname = path.resolve();
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
+
+dotenv.config();
 
 connectDB();
 

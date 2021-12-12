@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import Navbar from './components/navbar/Navbar';
-import { Container, Spinner } from 'react-bootstrap';
+import Navbar from './material/components/Navbar';
+import { Spinner } from 'react-bootstrap';
+import {Container} from '@mui/material'
 import {
   Switch,
   Route,
@@ -11,6 +12,12 @@ import { connect } from 'react-redux';
 import { requestData, logout } from './actions/playerActions';
 
 import Store from './pages/Store';
+import Admin from './pages/admin/Admin';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { CssBaseline } from '@mui/material';
+
+
+const theme = createTheme();
 
 function App({ loading }) {
 
@@ -20,18 +27,25 @@ function App({ loading }) {
    document.body.appendChild(script);
   }, []);
 
+
   return (
-    <>
-      {loading.loading ? <Spinner className="spinner" animation="border" variant="success" size="lg" /> : 
-        <>
-        <Navbar />
-        <Container className="body-container">
+        <ThemeProvider theme={theme}>
+        <div className="app">
+        
+        {loading.loading ? <Spinner className="spinner" animation="border" variant="success" size="lg" /> :
           <Switch>
-              <Route path='/store' component={Store} />
-          </Switch>
-        </Container>
-        </>}
-      </>
+              <Route path='/store'>
+                  <>
+                    <Navbar />
+                    <Container maxWidth='lg' className="body-container">
+                    <Store />
+                    </Container>
+                  </>
+                </Route>
+              <Route path='/admin' component={Admin} />
+          </Switch>}
+      </div>
+      </ThemeProvider>
   );
 }
 

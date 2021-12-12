@@ -1,12 +1,15 @@
 .package-card {
     border-radius: 10px;
-    background-color: #ebebeb;
+    background-color: #2E2E41;
+    color: #F09666;
 }
 
 .package-card h5 {
-    font-size: 1rem;
+    font-size: 1.2rem;
     text-align: center;
 }
+
+/* Remove this */
 
 .shop-menu {
     padding: 0px 2rem;    
@@ -17,9 +20,5 @@
 .card-image {
     height: 128px;
     width: 128px;
-}
-
-.price {
-    color: green;
 }
 

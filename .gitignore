@@ -1,1 +1,5 @@
 node_modules
+.env
+/client/src/App2.js
+/client/src/pages/admin
+/client/src/components/sidebar
