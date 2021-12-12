@@ -11,8 +11,6 @@ Install the client on your Minecraft server's plugins folder
 
 # See it Live
 https://minecraft-ecommerce.herokuapp.com/
-
-# PayPal Auth
 The deployed site uses PayPal Sandbox for demo purpose. You can use these credentials to make payments:
 Email: sb-cgua07598434@personal.example.com
 Password: p@woth1T
