@@ -12,7 +12,6 @@ import { connect } from 'react-redux';
 import { requestData, logout } from './actions/playerActions';
 
 import Store from './pages/Store';
-import Admin from './pages/admin/Admin';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { CssBaseline } from '@mui/material';
 
@@ -42,7 +41,6 @@ function App({ loading }) {
                     </Container>
                   </>
                 </Route>
-              <Route path='/admin' component={Admin} />
           </Switch>}
       </div>
       </ThemeProvider>
