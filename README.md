@@ -1,4 +1,4 @@
-# minecraft-ecom
+# Minecraft Ecommerce
 An ecommerce web application for monetizing Minecraft Servers using PayPal for transactions.
 
 # Tech Stack
@@ -9,6 +9,10 @@ https://github.com/ayush03dev/minecraft-ecom-client
 
 Install the client on your Minecraft server's plugins folder
 
-# Link
+# See it Live
 https://minecraft-ecommerce.herokuapp.com/
 
+# PayPal Auth
+The deployed site uses PayPal Sandbox for demo purpose. You can use these credentials to make payments:
+Email: sb-cgua07598434@personal.example.com
+Password: p@woth1T
